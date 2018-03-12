@@ -2,7 +2,6 @@ import numpy as np
 import random as random
 import math as math
 
-
 #Number of columms
 n = 4
 #Number of clusters
