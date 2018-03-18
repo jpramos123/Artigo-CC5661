@@ -10,7 +10,7 @@ class k_means:
         self.num_klus = num_klusters
         self.num_lessons = num_lessons
         self.seeds = np.array([(1,2), (3,2),(2,4)])
-        self.lessons = np.array([(4,1,0), (2,4,4),(6,1,2),(3,2,6)])
+        self.lessons = np.array([(4,1,0), (2,4,0),(6,1,0),(3,2,0),(8,2,0),(2,4,0),(2,4,0)])
 
         #np.random.uniform(1, 10, [self.num_lessons, self.num_dim]
 
@@ -33,7 +33,6 @@ class k_means:
         return self.arr_dist
 
     def min_dist(self):
-        arr_minor = np.zeros((self.num_klus, self.num_lessons, self.num_dim))
         self.count_minor = [0] * (self.num_klus)
 
         menor = 0
@@ -45,13 +44,18 @@ class k_means:
             self.count_minor[menor] += 1
             menor = 0
 
+    def calc_medoid(self):
+
         for i in range(num_lessons):
-            algo = self.lessons[i][2]
+            self.medoid = np.zeros((self.num_klus, self.num_dim))
+            for i in range (self.count_minor[i]):
+                for j in range(self.num_dim):
+                    dim_num
 
 
 
 # Lessons from the DB
-num_lessons = 4
+num_lessons = 6
 
 #Number of colummsarr_min
 dim_num = 3
