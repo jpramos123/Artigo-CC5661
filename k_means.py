@@ -9,8 +9,10 @@ class k_means:
         self.num_dim = num_dimension
         self.num_klus = num_klusters
         self.num_lessons = num_lessons
-        self.seeds = np.random.uniform(1, 10, [self.num_klus, self.num_dim])
-        self.lessons = np.random.uniform(1, 10, [self.num_lessons, self.num_dim])
+        self.seeds = np.array([(1,2), (3,2),(2,4)])
+        self.lessons = np.array([(4,1,0), (2,4,4),(6,1,2),(3,2,6)])
+
+        #np.random.uniform(1, 10, [self.num_lessons, self.num_dim]
 
     #Euclidian Distance Method,
     #Returning the distance of each seeds(Kluster required) from each lessons
@@ -22,7 +24,7 @@ class k_means:
         k = 0
         for i in range(self.num_klus):
             for j in range(self.num_lessons):
-                for n in range(self.num_dim):
+                for n in range(self.num_dim - 1):
                     sum_dist = sum_dist + (seeds[i][n] - lessons[j][n])**2
 
                 sum_dist = math.sqrt(sum_dist)
@@ -32,34 +34,36 @@ class k_means:
 
     def min_dist(self):
         arr_minor = np.zeros((self.num_klus, self.num_lessons, self.num_dim))
-        count_minor = [0] * (self.num_klus)
+        self.count_minor = [0] * (self.num_klus)
 
         menor = 0
         for j in range(self.num_lessons):
             for i in range(self.num_klus):
-                if arr_dist[i][j] < arr_dist[menor][j]:
+                if arr_dist[i][j] <= arr_dist[menor][j]:
                     menor = i
-            self.lessons[menor][4] = menor
-            count_minor[menor] += 1
-        return arr_minor
+            self.lessons[j][2] = menor
+            self.count_minor[menor] += 1
+            menor = 0
+
+        for i in range(num_lessons):
+            algo = self.lessons[i][2]
+
+
 
 # Lessons from the DB
-num_lessons = 7
+num_lessons = 4
 
 #Number of colummsarr_min
-dim_num = 5
+dim_num = 3
 
 #Number of clusters
-kluster_num = 5
+kluster_num = 3
 
 
 arr = np.zeros((kluster_num, num_lessons))
 
-k_M = k_means(dim_num, kluster_num, num_lessons)
+km = k_means(dim_num, kluster_num, num_lessons)
 
-arr_dist = k_M.eucl_dist(k_M.lessons, k_M.seeds)
+arr_dist = km.eucl_dist(km.lessons, km.seeds)
 
-arr_min = k_M.min_dist()
-
-for i in range(k_M.num_klus):
-    print(i)
+arr_min = km.min_dist()
