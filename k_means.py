@@ -13,6 +13,7 @@ class k_means:
         self.num_klus = num_klusters
         self.num_lessons = num_lessons
         self.seeds = np.random.uniform(1, 10, [self.num_klus, self.num_dim])
+        self.old_seed = copy.deepcopy(self.seeds)
         self.lessons = np.random.uniform(1, 10, [self.num_lessons, self.num_dim])
         self.medoid = np.zeros((self.num_klus, self.num_dim))
         self.old_medoid = copy.deepcopy(self.medoid)
@@ -39,6 +40,8 @@ class k_means:
                 sum_dist = math.sqrt(sum_dist)
                 self.arr_dist[i][j] = sum_dist
                 sum_dist = 0
+                if self.ecd == 1:
+                    self.old_seed = copy.deepcopy(self.arr_dist)
         return self.arr_dist
 
 
@@ -50,7 +53,8 @@ class k_means:
             for i in range(self.num_klus):
                 if arr_dist[i][j] <= arr_dist[menor][j]:
                     menor = i
-            self.lessons[j][3] = menor
+            self.lessons[j][2] = menor   ##### NAO MUDA O KLUSTER RELACIONADO ########
+                                         #### MESMO COM AS DISTANCIAS ALTERANDO ####
             self.count_minor[menor] += 1
             menor = 0
 
@@ -60,13 +64,14 @@ class k_means:
         self.cm += 1
         for i in range(self.num_lessons):
             for j in range(self.num_klus):
-                if self.lessons[i][3] == j:
+                if self.lessons[i][2] == j:
                     for k in range(self.num_dim - 1):
                         self.medoid[j][k] += self.lessons[i][k] / self.count_minor[j]
         if np.array_equal(self.old_medoid, self.medoid):
             return True
         self.old_medoid = copy.deepcopy(self.medoid)
         return False
+
 
 
 #       s
@@ -79,13 +84,13 @@ class k_means:
 
 
 # Lessons from the DB
-lessons_num = 4
+lessons_num = 10000
 
 #Number of colummsarr_min
-dim_num = 4
+dim_num = 23
 
 #Number of clusters
-kluster_num = 2
+kluster_num = 5
 
 km = k_means(dim_num, kluster_num, lessons_num)
 
@@ -97,7 +102,6 @@ medoid = km.calc_medoid()
 
 finish = False
 while(finish == False):
-
     dist = km.eucl_dist(km.lessons, km.medoid)
     min_dist = km.min_dist()
     finish = km.calc_medoid()
