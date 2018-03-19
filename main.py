@@ -1,4 +1,4 @@
-from . import k_means as km
+import k_means as km
 
 # Lessons from the DB
 num_lessons = 7
