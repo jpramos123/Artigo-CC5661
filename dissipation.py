@@ -7,14 +7,16 @@ from numpy.random	import choice
 
 import mysql.connector as con
 
-cnx = con.connect(	user='mvp', 
-					password='epidemiologia',
-    	        	host='johnny.heliohost.org',
-        	    	database='mvp_viral')
-        	    	
-cursor = cnx.cursor()
 
-def end():
+def getConnection():
+	cnx = con.connect(	user='mvp', 
+						password='epidemiologia',
+    		        	host='johnny.heliohost.org',
+        		    	database='mvp_viral')
+        	    	
+	return cnx
+
+def end(cnx, cursor):
 	cursor.close()
 	cnx.close()
 
@@ -112,15 +114,41 @@ def dispersao(outlier = 0):
 		if not outlier:
 			return int(choice(numpy.arange(1,3), p=[0.2, 0.8]))
 		return int(choice(numpy.arange(0, 2), p=[0.7, 0.3]))
+
+	
+	def get_uf():
+		query = 'SELECT uf_prob FROM FED_UNITS'
+		cnx = getConnection()
+		cursor = cnx.cursor()
+		cursor.execute(query)
+		state_prob = cursor.fetchall()
+		g = []
 		
-	tup_estados = ('AC','AL','AM','AP','BA','CE','DF','ES','GO','MA','MG','MS','MT',
-				   'PA','PB','PE','PI','PR','RJ','RN','RO','RR','RS','SC','SE','SP',
-				   'TO')
+		for i in range(0,27):
+			if outlier:
+				if state_prob[i][0] > 0.0:
+					state_prob[i] = 0.0
+				else:
+					state_prob[i] = 0.2
+			else:
+				state_prob[i] = state_prob[i][0]
+			
+		uf_id = float(choice(numpy.arange(1,28), p=state_prob))	
+		
+		query = 'SELECT uf_prob, uf_id FROM FED_UNITS WHERE uf_id = {}'.format(uf_id)
+		cursor.execute(query)
+		result = cursor.fetchone()
+
+		end(cnx, cursor)
+		return {'uf_prob': result[0], 'uf_id': result[1]}
+
 	
 	infectado = {}
 	p = []
+	uf = get_uf()
 
-	infectado['uf_infec']	 = tup_estados[randint(0,26)] 					  # uf_infec 
+	infectado['uf_id']	 	 = uf['uf_id']				 					  # uf_infec 
+	infectado['uf_prob']	 = uf['uf_prob']			 					  # uf_infec 
 	infectado['dt_infec']    = define_date()		    					  # dt_infec
 	infectado['ramo_ativ']   = randint(1,5)      		    				  # ramo_ativ
 	infectado['genero'] 	 = genero()										  # genero
@@ -149,12 +177,14 @@ def dispersao(outlier = 0):
 	insert_infectado = formatInsert('INFECTADOS', infectado)
 	#print insert_infectado
 
+	cnx = getConnection()
+	cursor = cnx.cursor()
 	try:
 		cursor.execute(insert_infectado, infectado)
 		print 'Registro inserido com sucesso!'
 	except Exception as e:
 		print 'ERRO!' + str(e)
-	
+	end(cnx, cursor)
 	return infectado
 
 
