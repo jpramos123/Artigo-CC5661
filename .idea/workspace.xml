@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7ff3b70-4eb9-4bfb-93c0-aa3f86c3b903" name="Default" comment="Update 2">
-      <change beforePath="$PROJECT_DIR$/.idea/k-means.iml" afterPath="$PROJECT_DIR$/.idea/k-means.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/database.py" afterPath="$PROJECT_DIR$/database.py" />
       <change beforePath="$PROJECT_DIR$/dissipation.py" afterPath="$PROJECT_DIR$/dissipation.py" />
-      <change beforePath="$PROJECT_DIR$/k-means.ipynb" afterPath="$PROJECT_DIR$/k-means.ipynb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,8 +16,8 @@
       <file leaf-file-name="dissipation.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dissipation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="591">
-              <caret line="190" column="0" lean-forward="true" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+            <state relative-caret-position="-7076">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -60,10 +55,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-10" />
-    <option name="width" value="980" />
-    <option name="height" value="1044" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="1920" />
+    <option name="height" value="1034" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -79,12 +73,20 @@
             <id>General</id>
           </State>
           <State>
+            <id>Internationalization issues</id>
+          </State>
+          <State>
             <id>Python</id>
           </State>
           <State>
             <id>ReST</id>
           </State>
         </expanded-state>
+        <selected-state>
+          <State>
+            <id>BashSupport</id>
+          </State>
+        </selected-state>
       </profile-state>
     </entry>
   </component>
@@ -120,7 +122,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -233,14 +235,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-10" y="0" width="980" height="1044" extended-state="0" />
+    <frame x="-11" y="-11" width="1942" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15783784" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32883435" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32883435" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32760736" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3379571" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43905193" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -735,8 +737,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dissipation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="190" column="0" lean-forward="true" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+        <state relative-caret-position="-7076">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
