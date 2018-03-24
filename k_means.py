@@ -2,25 +2,20 @@ import numpy as np
 import random as random
 import math as math
 import matplotlib as mp
-<<<<<<< HEAD
 from   database import infected
-=======
 import time
 import copy
->>>>>>> master
 
 start_time = time.time()
 
 class k_means:
-<<<<<<< HEAD
-    def __init__(self, klusters):
-        self.infected = infected.query()
-        self.num_dim = self.infected['dimensions']
-        self.num_klus = klusters
-        self.num_lessons = self.infected['lessons']
-        self.seeds = np.random.uniform(1, 10, [self.num_lessons, self.num_dim])
-        self.lessons = self.infected['results']
-=======
+#    def __init__(self, klusters):
+#        self.infected = infected.query()
+#        self.num_dim = self.infected['dimensions']
+#        self.num_klus = klusters
+#        self.num_lessons = self.infected['lessons']
+#        self.seeds = np.random.uniform(1, 10, [self.num_lessons, self.num_dim])
+#        self.lessons = self.infected['results']
     def __init__(self, num_dimension, num_klusters, num_lessons):
         self.num_dim = num_dimension
         self.num_klus = num_klusters
@@ -36,7 +31,6 @@ class k_means:
         self.md = 0
         self.cm = 0
         #np.random.uniform(1, 10, [self.num_lessons, self.num_dim])
->>>>>>> master
 
     #Euclidian Distance Method,
     #Returning the distance of each seeds(Kluster required) from each lessons
@@ -45,11 +39,7 @@ class k_means:
     def eucl_dist(self, lessons, seeds):
         self.arr_dist = np.zeros((self.num_klus, self.num_lessons))
         sum_dist = 0
-<<<<<<< HEAD
-#        k = 0
-=======
         self.ecd += 1
->>>>>>> master
         for i in range(self.num_klus):
             for j in range(self.num_lessons):
                 for n in range(self.num_dim - 1):
@@ -62,13 +52,6 @@ class k_means:
                     self.old_seed = copy.deepcopy(self.arr_dist)
         return self.arr_dist
 
-<<<<<<< HEAD
-    def min_dist(self):
-#        arr_minor = np.zeros((self.num_klus, self.num_lessons, self.num_dim))
-#        count_minor = [0] * (self.num_klus)
-=======
->>>>>>> master
-
     def min_dist(self):
         self.count_minor = [0] * (self.num_klus)
         self.md += 1
@@ -77,11 +60,6 @@ class k_means:
             for i in range(self.num_klus):
                 if arr_dist[i][j] <= arr_dist[menor][j]:
                     menor = i
-<<<<<<< HEAD
-            self.lessons[menor][4] = menor
-            count_minor[menor] += 1
-        return arr_minor
-=======
             self.lessons[j][2] = menor   ##### NAO MUDA O KLUSTER RELACIONADO ########
                                          #### MESMO COM AS DISTANCIAS ALTERANDO ####
             self.count_minor[menor] += 1
@@ -136,4 +114,3 @@ while(finish == False):
     finish = km.calc_medoid()
 
 print("--- %s seconds ---" % (time.time() - start_time))
->>>>>>> master
