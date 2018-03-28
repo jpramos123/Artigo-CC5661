@@ -4,6 +4,8 @@ import math as math
 import matplotlib as mp
 import time
 import copy
+import matplotlib.pyplot as plt
+
 
 start_time = time.time()
 
@@ -12,9 +14,13 @@ class k_means:
         self.num_dim = num_dimension
         self.num_klus = num_klusters
         self.num_lessons = num_lessons
-        self.seeds = np.random.uniform(1, 10, [self.num_klus, self.num_dim])
+        self.seeds = np.random.uniform(1, 6, [self.num_klus, self.num_dim])
+        self.lessons = np.genfromtxt('data_set.csv', delimiter=',')
+       # self.seeds = np.array([(2, 4), (1, 2)])
         self.old_seed = copy.deepcopy(self.seeds)
-        self.lessons = np.random.uniform(1, 10, [self.num_lessons, self.num_dim])
+        #self.lessons = np.random.uniform(0, 1, [self.num_lessons, self.num_dim + 1])
+        #self.lessons = np.array([(4, 3, 0), (5, 1, 0), (4, 5, 0)])
+
         self.medoid = np.zeros((self.num_klus, self.num_dim))
         self.old_medoid = copy.deepcopy(self.medoid)
 
@@ -29,12 +35,13 @@ class k_means:
     # arr_dist = [ seed_1 [dist_lesson_1, dist_lessons_2, ... , dist_lesson_n]
     #              seed_2 [dist_lesson_1, dist_lessons_2, ... , dist_lesson_n]]
     def eucl_dist(self, lessons, seeds):
+
         self.arr_dist = np.zeros((self.num_klus, self.num_lessons))
         sum_dist = 0
         self.ecd += 1
         for i in range(self.num_klus):
             for j in range(self.num_lessons):
-                for n in range(self.num_dim - 1):
+                for n in range(self.num_dim ):
                     sum_dist = sum_dist + (seeds[i][n] - lessons[j][n])**2
 
                 sum_dist = math.sqrt(sum_dist)
@@ -48,24 +55,26 @@ class k_means:
     def min_dist(self):
         self.count_minor = [0] * (self.num_klus)
         self.md += 1
-        menor = 0
+
         for j in range(self.num_lessons):
+            menor = 0
             for i in range(self.num_klus):
                 if arr_dist[i][j] <= arr_dist[menor][j]:
                     menor = i
             self.lessons[j][2] = menor   ##### NAO MUDA O KLUSTER RELACIONADO ########
                                          #### MESMO COM AS DISTANCIAS ALTERANDO ####
             self.count_minor[menor] += 1
-            menor = 0
+
 
 
     def calc_medoid(self):
+
         self.medoid = np.zeros((self.num_klus, self.num_dim))
         self.cm += 1
         for i in range(self.num_lessons):
             for j in range(self.num_klus):
                 if self.lessons[i][2] == j:
-                    for k in range(self.num_dim - 1):
+                    for k in range(self.num_dim):
                         self.medoid[j][k] += self.lessons[i][k] / self.count_minor[j]
         if np.array_equal(self.old_medoid, self.medoid):
             return True
@@ -74,23 +83,14 @@ class k_means:
 
 
 
-#       s
-#   4 2 0  l0
-#   2 1 1  l1
-#   5 2 1  l2
-#   4 2 0  l3
-#
-#       #
-
-
 # Lessons from the DB
-lessons_num = 10000
+lessons_num = 150
 
 #Number of colummsarr_min
-dim_num = 23
+dim_num = 2
 
 #Number of clusters
-kluster_num = 5
+kluster_num = 3
 
 km = k_means(dim_num, kluster_num, lessons_num)
 
@@ -100,10 +100,20 @@ arr_min = km.min_dist()
 
 medoid = km.calc_medoid()
 
-finish = False
-while(finish == False):
-    dist = km.eucl_dist(km.lessons, km.medoid)
-    min_dist = km.min_dist()
-    finish = km.calc_medoid()
+plt.scatter(km.lessons[:,0], km.lessons[:, 1])
+plt.scatter(km.seeds[:, 0], km.seeds[:, 1])
+plt.show()
 
+finish = 0
+while(finish):
+    dist = km.eucl_dist(km.lessons, km.medoid)
+    print(dist.shape)
+    min_dist = km.min_dist()
+    med = km.calc_medoid()
+    finish += 1
+
+plt.scatter(km.medoid[:, 0], km.medoid[:, 1]) #, s=1 + km.lessons[:, 2] )
+#plt.scatter(km.lessons[:,0], km.lessons[:, 1])
+#plt.scatter(km.seeds[:, 0], km.seeds[:, 1])
+plt.show()
 print("--- %s seconds ---" % (time.time() - start_time))
