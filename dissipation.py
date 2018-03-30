@@ -151,9 +151,9 @@ def dispersao(outlier = 0):
 
 	try:
 		cursor.execute(insert_infectado, infectado)
-		print 'Registro inserido com sucesso!'
+		print ('Registro inserido com sucesso!')
 	except Exception as e:
-		print 'ERRO!' + str(e)
+		print ('ERRO!' + str(e))
 	
 	return infectado
 
