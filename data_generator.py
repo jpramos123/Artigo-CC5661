@@ -18,6 +18,12 @@ class DataGenerator(object):
 	def iszero(self, num, alt):
 		return alt if num == 0 else num
 
+	def tooBig(self, value):
+		return 1 if value > 1 else value
+
+	def tooSmall(self, value):
+		return 0 if value < 0 else value
+
 	def getPattern(self, classType):
 		query = 'SELECT * FROM INFEC_TYPE WHERE id_infec = {}'.format(classType)
 		self.cursor.execute(query)
@@ -52,8 +58,8 @@ class DataGenerator(object):
 			newInfected = [infecPattern[0]]
 			a = 0 # Remover no código final
 			for j in range(1,len(infecPattern)):
-				deviation = noisePerc * self.iszero(infecPattern[j], 1)
-				newInfected.append(abs(normal(infecPattern[j], deviation)) % 1)
+				deviation = noisePerc # * self.iszero(infecPattern[j], 1)
+				newInfected.append(self.tooBig(self.tooSmall(normal(infecPattern[j], deviation))))
 			self.insert(tuple(newInfected), i, classType)
 
 		# o dado vindo do select será o centro do numpy.random.normal
