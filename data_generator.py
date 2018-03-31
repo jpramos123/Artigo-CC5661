@@ -80,6 +80,20 @@ class DataGenerator(object):
 			result = [[]]
 		return result
 
+	def getPatterns(self):
+		query = ("SELECT id_infec,    ramo_ativ,   genero,    vacinado,  sin_dor,  "
+				 " 		 dt_dor,  	  sin_hemo,    dt_hemo,   sin_faget, dt_faget, "
+				 " 		 sin_anuria,  dt_anuria,   sin_adv,   exa_tgo, 	 exa_tgp,  "
+				 "		 exa_bil, 	  class_final, evol_caso, est_final, uf_prob   "
+				 "FROM 	INFEC_TYPE")
+
+		try:
+			self.cursor.execute(query)
+		except Exception as e:
+			print(str(e))
+
+		return self.cursor.fetchall()
+
 	def clearDatabase(self):
 		query = "DELETE FROM INFECTED"
 		try:

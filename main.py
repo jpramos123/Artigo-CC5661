@@ -12,7 +12,7 @@ plt.figure(figsize=(12,12))
 
 for i in range(1,7):
 	gen.clearDatabase()
-	gen.generateDatabase(i*5/100,10)
+	gen.generateDatabase(i*5/100,200)
 
 	infected_list = gen.getInfectedList()
 	km = KMeans(n_clusters=4, n_init=1000, algorithm="full", tol=1e-8)
@@ -23,7 +23,7 @@ for i in range(1,7):
 	transformed = pd.DataFrame(pca.fit_transform(infected_list))
 	cent_reduc = pd.DataFrame(pca.fit_transform(km.cluster_centers_))
 	plt.subplot(320+i)
-	plt.scatter(transformed[:][0], transformed[:][1], s = 20, label='Class 1', c=kmp)
+	plt.scatter(transformed[:][0], transformed[:][1], s = 20, label='Data points', c=kmp)
 	plt.scatter(cent_reduc[:][0], cent_reduc[:][1], s = 60, c = 'red', label = 'Centroids')
 	plt.tight_layout(3)
 	plt.title("{}% of Noise".format(i*5))
