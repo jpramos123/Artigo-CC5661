@@ -123,7 +123,7 @@ class DataGenerator(object):
 		return asarray(result_f)
 
 	def generateDatabase(self, noisePerc, quantity):
-		for i in range(1,5):
+		for i in range(1,6):
 			self.generateInfected(i, noisePerc, quantity)
 			print()
 		print("***Database populated!***")
