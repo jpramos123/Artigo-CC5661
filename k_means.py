@@ -2,6 +2,7 @@ import numpy as np
 import random as random
 import math as math
 import matplotlib as mp
+from   database import infected
 import time
 import copy
 import matplotlib.pyplot as plt
@@ -10,6 +11,13 @@ import matplotlib.pyplot as plt
 start_time = time.time()
 
 class k_means:
+#    def __init__(self, klusters):
+#        self.infected = infected.query()
+#        self.num_dim = self.infected['dimensions']
+#        self.num_klus = klusters
+#        self.num_lessons = self.infected['lessons']
+#        self.seeds = np.random.uniform(1, 10, [self.num_lessons, self.num_dim])
+#        self.lessons = self.infected['results']
     def __init__(self, num_dimension, num_klusters, num_lessons):
         self.num_dim = num_dimension
         self.num_klus = num_klusters
@@ -50,7 +58,6 @@ class k_means:
                 if self.ecd == 1:
                     self.old_seed = copy.deepcopy(self.arr_dist)
         return self.arr_dist
-
 
     def min_dist(self):
         self.count_minor = [0] * (self.num_klus)
