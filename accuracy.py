@@ -4,12 +4,12 @@ import math as math
 
 class accuracy:
 
-    def __init__(self, clusters, lessons):
+    def __init__(self, clusters, patterns):
         self.num_dim = np.shape(clusters)[1]
         self.num_klus = np.shape(clusters)[0]
-        self.num_lessons = np.shape(lessons)[0]
+        self.num_lessons = np.shape(patterns)[0]
         self.seeds = clusters
-        self.lessons = lessons
+        self.patterns = patterns
 
     #Euclidian Distance Method,
     #Returning the distance of each seeds(Kluster required) from each lessons
@@ -21,7 +21,7 @@ class accuracy:
         for i in range(self.num_klus):
             for j in range(self.num_lessons):
                 for n in range(self.num_dim):
-                    sum_dist = sum_dist + (self.seeds[i][n] - self.lessons[j][n])**2
+                    sum_dist = sum_dist + (self.seeds[i][n] - self.patterns[j][n]) ** 2
 
                 sum_dist = math.sqrt(sum_dist)
                 self.arr_dist[i][j] = sum_dist

@@ -35,10 +35,10 @@ plt.title("{}% of Noise".format(i*5))
 plt.legend()
 #plt.draw()
 
-code_ac = ac.accuracy(km.cluster_centers_, infected_list)
+code_ac = ac.accuracy(km.cluster_centers_, gen.getPatterns())
 eucl = code_ac.eucl_dist()
 dist = code_ac.min_dist()
-perc = code_ac.percentage(dist, kmp)
+#perc = code_ac.percentage(dist, kmp)
 print(dist)
 
 

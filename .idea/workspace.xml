@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7ff3b70-4eb9-4bfb-93c0-aa3f86c3b903" name="Default" comment="Update 2">
-      <change afterPath="$PROJECT_DIR$/accuracy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/k-means.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/k-means.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accuracy.py" beforeDir="false" afterPath="$PROJECT_DIR$/accuracy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -21,25 +19,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="data_generator.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_generator.py">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-289">
-              <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+            <state relative-caret-position="436">
+              <caret line="40" column="1" selection-end-line="60" />
               <folding>
-                <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#0#34#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.py">
+      <file leaf-file-name="data_generator.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data_generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-133">
-              <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+            <state relative-caret-position="51">
+              <caret line="36" column="52" lean-forward="true" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
               <folding>
-                <element signature="e#0#34#0" expanded="true" />
+                <element signature="e#0#31#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -48,8 +46,8 @@
       <file leaf-file-name="accuracy.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/accuracy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="170">
+              <caret line="25" column="46" lean-forward="true" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -72,6 +70,7 @@
       <find>query</find>
       <find>asarray</find>
       <find>iszero</find>
+      <find>getPa</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -88,14 +87,13 @@
         <option value="$PROJECT_DIR$/gitignore.txt" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/dissipation.py" />
-        <option value="$PROJECT_DIR$/data_generator.py" />
         <option value="$PROJECT_DIR$/accuracy.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/data_generator.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1920" />
     <option name="y" value="27" />
     <option name="width" value="1920" />
     <option name="height" value="1020" />
@@ -282,16 +280,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="27" width="1920" height="1020" extended-state="6" />
+    <frame x="0" y="27" width="1920" height="1020" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49912435" visible="true" weight="0.16297469" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.328" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32883435" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.34742856" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="1.0" />
-      <window_info anchor="bottom" id="Python Console" order="8" weight="0.43771428" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="8" visible="true" weight="0.43771428" />
       <window_info id="Structure" order="1" sideWeight="0.50087565" side_tool="true" weight="0.16297469" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.6388571" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.28228572" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3977143" />
       <window_info id="Favorites" order="2" sideWeight="0.50087565" side_tool="true" weight="0.16297469" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -352,6 +351,11 @@
           <line>39</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_generator.py</url>
+          <line>68</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -360,7 +364,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="30" />
+      <option name="time" value="31" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -727,20 +731,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-289">
-          <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/accuracy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="170">
+          <caret line="25" column="46" lean-forward="true" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -749,10 +743,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-133">
-          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        <state relative-caret-position="436">
+          <caret line="40" column="1" selection-end-line="60" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="36" column="52" lean-forward="true" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
