@@ -62,8 +62,8 @@ class DataGenerator(object):
 				newInfected.append(self.tooBig(self.tooSmall(normal(infecPattern[j], deviation))))
 			self.insert(tuple(newInfected), i, classType)
 
-		# o dado vindo do select será o centro do numpy.random.normal
-		# já o parâmetro noisePerc será o 'scale' --> Desvio Padrão
+	# o dado vindo do select será o centro do numpy.random.normal
+	# já o parâmetro noisePerc será o 'scale' --> Desvio Padrão
 
 	def getInfectedList(self):
 		query = ("SELECT ramo_ativ,   genero,      vacinado,  sin_dor,  "
