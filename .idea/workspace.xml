@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="d7ff3b70-4eb9-4bfb-93c0-aa3f86c3b903" name="Default" comment="Update 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accuracy.py" beforeDir="false" afterPath="$PROJECT_DIR$/accuracy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
+=======
+    <list default="true" id="d7ff3b70-4eb9-4bfb-93c0-aa3f86c3b903" name="Default" comment="Update 2" />
+>>>>>>> 29e05b42c65982faa82de51e63f1c24b57c6c3be
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -280,8 +284,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="0" y="27" width="1920" height="1020" extended-state="6" />
     <editor active="true" />
+=======
+    <frame x="-11" y="-11" width="1942" height="1056" extended-state="6" />
+>>>>>>> 29e05b42c65982faa82de51e63f1c24b57c6c3be
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49912435" visible="true" weight="0.16297469" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.328" />
