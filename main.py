@@ -35,7 +35,9 @@ plt.title("{}% of Noise".format(i*5))
 plt.legend()
 #plt.draw()
 
-code_ac = ac.accuracy(km.cluster_centers_, gen.getPatterns())
+
+a = np.array(gen.getPatterns())
+code_ac = ac.accuracy(km.cluster_centers_, a)
 eucl = code_ac.eucl_dist()
 dist = code_ac.min_dist()
 #perc = code_ac.percentage(dist, kmp)
@@ -46,7 +48,6 @@ r = gen.getClassType()
 
 print(r)
 print(kmp+1)
-print()
 #perc = 0
 #for i in range(len(r)):
 #	if r[i] == (kmp[i]+1):

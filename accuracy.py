@@ -15,6 +15,7 @@ class accuracy:
     #Returning the distance of each seeds(Kluster required) from each lessons
     # arr_dist = [ seed_1 [dist_lesson_1, dist_lessons_2, ... , dist_lesson_n]
     #              seed_2 [dist_lesson_1, dist_lessons_2, ... , dist_lesson_n]]
+
     def eucl_dist(self):
         self.arr_dist = np.zeros((self.num_klus, self.num_lessons))
         sum_dist = 0
