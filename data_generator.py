@@ -56,9 +56,8 @@ class DataGenerator(object):
 
 		for i in range(quantity):
 			newInfected = [infecPattern[0]]
-			a = 0 # Remover no código final
 			for j in range(1,len(infecPattern)):
-				deviation = noisePerc # * self.iszero(infecPattern[j], 1)
+				deviation = noisePerc * infecPattern[j]
 				newInfected.append(self.tooBig(self.tooSmall(normal(infecPattern[j], deviation))))
 			self.insert(tuple(newInfected), i, classType)
 
@@ -81,18 +80,20 @@ class DataGenerator(object):
 		return result
 
 	def getPatterns(self):
-		query = ("SELECT id_infec,    ramo_ativ,   genero,    vacinado,  sin_dor,  "
+		query = ("SELECT ramo_ativ,   genero,    vacinado,  sin_dor,  "
 				 " 		 dt_dor,  	  sin_hemo,    dt_hemo,   sin_faget, dt_faget, "
 				 " 		 sin_anuria,  dt_anuria,   sin_adv,   exa_tgo, 	 exa_tgp,  "
-				 "		 exa_bil, 	  class_final, evol_caso, est_final, uf_prob   "
+				 "		 exa_bil, 	  class_final, evol_caso, est_final, uf_id   "
 				 "FROM 	INFEC_TYPE")
 
 		try:
 			self.cursor.execute(query)
+			result = self.cursor.fetchall()
 		except Exception as e:
 			print(str(e))
+			result = [[]]
 
-		return self.cursor.fetchall()
+		return asarray(result)
 
 	def clearDatabase(self):
 		query = "DELETE FROM INFECTED"
